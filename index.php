@@ -9,13 +9,9 @@
 
 <body>    
     <form action="index.php" method="post">        
-        <label>x:</label>
-        <input type="text" name="x">
-        <label>y:</label>
-        <input type="text" name="y">
-        <label>z:</label>
-        <input type="text" name="z">
-        <input type="submit" value="total">
+        <label>radius:</label>
+        <input type="text" name="radius">        
+        <input type="submit" value="calc">
     </form>
 </body>
 
@@ -24,41 +20,22 @@
 <?php
     // $_GET $_POST     -  get per quary (url), post - saugesnis, uzklausos dydis neribotas
 
-    $x = $_POST["x"];
-    $y = $_POST["y"];
-    $z = $_POST["z"];
-    $total = null;
+    $radius = $_POST["radius"];
+    $perimet = null;
+    $area = null;
+    $volume = null;
 
-    $total = abs($x);
+    $perimet = 2 * pi() * $radius;
+    $perimet = round($perimet, 2);
 
-    echo "x lygu: {$x} y lygu: {$y} z lygu: {$z} <br>";
-    echo "x modulis: " . $total . "<br>";
-   
-    $total = round($x);
-    echo "x round: " . $total . "<br>";
-    
-    $total = floor($x);                     //round down
-    echo "x round down: " . $total . "<br>";
+    $area = pi() * pow($radius, 2);
+    $area = round($area, 2);
 
-    $total = ceil($x);                     //round up
-    echo "x round up: " . $total . "<br>";
+    $volume = 4/3 * pi() * pow($radius, 3);
+    $volume = round($volume, 2);
 
-    $total = sqrt($x);
-    echo "square root of x: " . $total . "<br>";       //saknis is x
-
-    $total = pow($x, $y);
-    echo "power: " . $total . "<br>";       //x^y
-
-    $total = max($x, $y, $z);
-    echo "highhest number: " . $total . "<br>";     
-    
-    $total = min($x, $y, $z);
-    echo "lowest number: " . $total . "<br>";     
-   
-    $total = pi();
-    echo "pi: " . $total . "<br>";   
-
-    $total = rand(1, 99);
-    echo "rand number: " . $total . "<br>";
+    echo "Perimeter = {$perimet} cm <br>";
+    echo "Area = {$area} cm2 <br>";
+    echo "Volume = {$volume} cm3 <br>";  
 
 ?>
