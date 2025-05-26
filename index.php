@@ -7,17 +7,14 @@
     <title>Methods</title>
 </head>
 
-<body>
-    <!-- <form action="index.php" method="post">
-        <label>username:</label>
-        <input type="text" name="username">
-        <label>password:</label>
-        <input type="password" name="password">
-        <input type="submit" value="Log in">
-    </form> -->
+<body>    
     <form action="index.php" method="post">        
-        <label>quantity:</label>
-        <input type="text" name="quantity">
+        <label>x:</label>
+        <input type="text" name="x">
+        <label>y:</label>
+        <input type="text" name="y">
+        <label>z:</label>
+        <input type="text" name="z">
         <input type="submit" value="total">
     </form>
 </body>
@@ -26,16 +23,42 @@
 
 <?php
     // $_GET $_POST     -  get per quary (url), post - saugesnis, uzklausos dydis neribotas
-    // echo $_POST["username"] . "<br>";
-    // echo $_POST["password"] . "<br>";
 
-    $item = "pizza";
-    $price = 5.99;
-    $quantity = $_POST["quantity"];
+    $x = $_POST["x"];
+    $y = $_POST["y"];
+    $z = $_POST["z"];
     $total = null;
 
-    $total = $quantity * $price;
+    $total = abs($x);
 
-    echo"You have ordered {$quantity} x {$item}'s<br>";
-    echo"Your total is: \${$total}";
+    echo "x lygu: {$x} y lygu: {$y} z lygu: {$z} <br>";
+    echo "x modulis: " . $total . "<br>";
+   
+    $total = round($x);
+    echo "x round: " . $total . "<br>";
+    
+    $total = floor($x);                     //round down
+    echo "x round down: " . $total . "<br>";
+
+    $total = ceil($x);                     //round up
+    echo "x round up: " . $total . "<br>";
+
+    $total = sqrt($x);
+    echo "square root of x: " . $total . "<br>";       //saknis is x
+
+    $total = pow($x, $y);
+    echo "power: " . $total . "<br>";       //x^y
+
+    $total = max($x, $y, $z);
+    echo "highhest number: " . $total . "<br>";     
+    
+    $total = min($x, $y, $z);
+    echo "lowest number: " . $total . "<br>";     
+   
+    $total = pi();
+    echo "pi: " . $total . "<br>";   
+
+    $total = rand(1, 99);
+    echo "rand number: " . $total . "<br>";
+
 ?>
