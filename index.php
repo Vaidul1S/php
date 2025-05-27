@@ -1,28 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="index.php" method="post">
+        <label>Enter your number</label>
+        <input type="text" name="counter">
+        <input type="submit" value="Start">
+        <input type="submit" name="stop" value="stop">
+    </form>
+</body>
+</html>
+
 <?php
-    // switch statements
+    // for loop
+    $counter = $_POST["counter"];
 
-    $grade = "pizza";
+    for ($i=$counter; $i >= 0; $i--) { 
+        echo $i . "<br>";
+    }
 
-    switch($grade){
-        case "A";
-            echo"You did great<br>";
-            break;
-        case "B";
-            echo"You did good<br>";
-            break;
-        case "C";
-            echo"You did OK<br>";
-            break;
-        case "D";
-            echo"You did poorly<br>";
-            break;        
-        case "F";
-            echo"You fail this City<br>";
-            break;
-        default:
-            echo"Your grade may be eateble but it's not valid<br>";
-    }   
+    // while loop
 
-    echo"Your grade is {$grade} <br>";
+    $seconds = 0;
+    $running = true;
 
+    while ($running) {
+        //wait 1 second
+        if(isset($_POST["stop"])){
+            $running = false;
+        } else {
+            $seconds++;
+            echo $seconds . "<br>";
+        }
+        
+    }
 ?>
