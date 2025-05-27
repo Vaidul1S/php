@@ -30,7 +30,7 @@
 
     while ($running) {
         //wait 1 second
-        if(isset($_POST["stop"])){
+        if(isset($_POST["stop"])|| $seconds >= 60){
             $running = false;
         } else {
             $seconds++;
