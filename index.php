@@ -1,41 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="index.php" method="post">
-        <label>Enter your number</label>
-        <input type="text" name="counter">
-        <input type="submit" value="Start">
-        <input type="submit" name="stop" value="stop">
-    </form>
-</body>
-</html>
-
 <?php
-    // for loop
-    $counter = $_POST["counter"];
+    // array
 
-    for ($i=$counter; $i >= 0; $i--) { 
-        echo $i . "<br>";
+    $food_1 = "pizza";
+    $food_2 = "apple";
+    $food_3 = "cookie";
+    $food_4 = "orange";
+    $food_5 = "blueberry";
+    
+    $foods = array("pizza", "apple", "cookie", "orange", "blueberry");
+    
+    echo $foods[0] . "<br>";
+    echo $foods[4] . "<br>";
+
+    $foods[4] = "pineapple";
+    array_push($foods, "banana", "kiwi");
+    array_pop($foods);                          //istrina paskutini
+    array_shift($foods);                        //istrina pirma
+    $foods = array_reverse($foods);             //sukuria nauja atvirkstini masyva(array), todel naujas priskirimas
+
+    foreach($foods as $food){
+        echo $food . "<br>";
     }
+    
+    echo count($foods);
 
-    // while loop
-
-    $seconds = 0;
-    $running = true;
-
-    while ($running) {
-        //wait 1 second
-        if(isset($_POST["stop"])|| $seconds >= 60){
-            $running = false;
-        } else {
-            $seconds++;
-            echo $seconds . "<br>";
-        }
-        
-    }
 ?>
