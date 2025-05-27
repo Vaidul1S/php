@@ -22,6 +22,18 @@
         echo $food . "<br>";
     }
     
-    echo count($foods);
+    echo count($foods) . "<br>";
+
+    $capitals = array("Lithuania" => "Vilnius", 
+                      "South Korea" => "Seoul", 
+                      "Latvia"=> "Ryga", 
+                      "Italy" => "Rome", 
+                      "Canada" => "Otawa");
+
+    echo $capitals["Italy"] . "<br>";
+
+    foreach($capitals as $key => $value){
+        echo"{$key} = {$value} <br>";
+    }
 
 ?>
