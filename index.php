@@ -3,39 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Radio buttons</title>
 </head>
 <body>
     <form action="index.php" method="post">
-        <input type="radio" name="credit_card" value="Visa">Visa<br>
-        <input type="radio" name="credit_card" value="Mastercard">Mastercard<br>
-        <input type="radio" name="credit_card" value="Revolut">Revolut<br>        
-        <input type="submit" name="confirm" value="confirm">
+        <input type="checkbox" name="foods[]" value="pizza">Pizza<br>
+        <input type="checkbox" name="foods[]" value="apple">Apple<br>
+        <input type="checkbox" name="foods[]" value="cookie">Cookie<br>        
+        <input type="checkbox" name="foods[]" value="orange">Orange<br>        
+        <input type="checkbox" name="foods[]" value="blueberry">Blueberry<br>        
+        <input type="submit" name="Order" value="Order">
     </form>
 </body>
 </html>
 <?php
+    //checkboxes
 
-    if(isset($_POST["confirm"])){
-        $credit_card = null;
-
-        if(isset($_POST["credit_card"])){
-            $credit_card = $_POST["credit_card"];                    
-        } 
-
-        switch ($credit_card) {
-            case "Visa":
-                echo"You selected Visa";
-                break;
-            case "Mastercard":
-                echo"You selected Mastercard";
-                break;
-            case "Revolut":
-                echo"You selected Revolut";
-                break;
-            default: echo "Select your payment card";
-        }                  
+    if (isset($_POST["Order"])){
+        $foods = $_POST["foods"];
+        
+        foreach($foods as $food){
+            echo $food . ", ";
+        }
         
     }
-    
 ?>
