@@ -1,19 +1,19 @@
 <?php
-    //include() function
-    include("components17/header.html");
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Include</title>
-</head>
-<body>
-    Welcome to Homepage!<br>
+    //cookie
+    //86400 is 1 day in seconds
+
+    setcookie("cookie_name", "cookie_body", time() + (86400 * 0), "/");         
+    setcookie("food", "pizza", time() + (86400 * 0), "/");         
+    setcookie("meow", "ella ranger", time() + (86400 * 0), "/");         
+
     
-</body>
-</html>
-<?php
-        include("components17/footer.html");
+    foreach($_COOKIE as $key => $value){
+        echo"{$key} = {$value} <br>";
+    }
+
+    if(isset($_COOKIE["food"])){
+        echo"Buy some {$_COOKIE["food"]} !";
+    } else {
+        echo"There is no cookie.";
+    }
 ?>
