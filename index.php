@@ -11,7 +11,7 @@
 </head>
 <body>
     Welcome to Homepage!<br>
-    Stuff about your homepage goes here.
+    
 </body>
 </html>
 <?php
