@@ -1,26 +1,3 @@
-<?php
-    //cookie
-    //86400 is 1 day in seconds
-
-    setcookie("cookie_name", "cookie_body", time() + (86400 * 1), "/");         
-    setcookie("food", "pizza", time() + (86400 * 2), "/");         
-    setcookie("meow", "ella ranger", time() + (86400 * 3), "/");         
-
-    
-    foreach($_COOKIE as $key => $value){
-        echo"{$key} = {$value} <br>";
-    }
-
-    if(isset($_COOKIE["food"])){
-        echo"Buy some {$_COOKIE["food"]} !";
-    } else {
-        echo"There is no cookie.";
-    }
-
-    //session
-
-    session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,15 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Session</title>
 </head>
-<body>
-    This is a login page<br>
-    <a href="/website/components17/home.php">Home</a>
+<body>   
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
+        Username: <br>
+        <input type="text" name="username"><br>
+        Password: <br>
+        <input type="password" name="password"><br>
+        <input type="submit" name="submit" value="Submit">
+    </form>
 </body>
 </html>
 <?php
-    $_SESSION["username"] = "Gawon";
-    $_SESSION["password"] = "123";
+    // $_SERVER
 
-    echo $_SESSION["username"] . "<br>";
-    echo $_SESSION["password"] . "<br>";
+    foreach($_SERVER as $key => $value){
+        echo"{$key} --- {$value} <br>";
+    }
+
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        echo"------------------------------Yellow------------------------------";
+    }
+   
 ?>

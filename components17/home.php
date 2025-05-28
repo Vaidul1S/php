@@ -10,10 +10,18 @@
 </head>
 <body>
     Welcome home <br>
-    <a href="/website/index.php">Index</a><br>
+    <a href="/website/index18.php">Index</a><br>
+    <form action="home.php" method="post">
+        <input type="submit" value="Logout" name="logout">
+    </form>
 </body>
 </html>
 <?php
     echo $_SESSION["username"] . "<br>";
     echo $_SESSION["password"] . "<br>";
+
+    if(isset($_POST["logout"])){
+        session_destroy();
+        header("Location: ../index18.php");
+    }
 ?>
