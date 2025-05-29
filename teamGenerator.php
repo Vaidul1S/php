@@ -15,12 +15,13 @@
 </body>
 </html>
 <?php
-    if(isset($_COOKIE["team"])){
+    if(!isset($_COOKIE["team"])){
         $teams = "";
         $array = array();
-        setcookie("teams", "", time() + (86400 * 10), "/");
+        setcookie("teams", $teams, time() + (86400 * 10), "/");
     } else {
-        $teams = 
+        $teams = $_COOKIE["teams"];
+        $array = explode(" ", $teams);
     }
     
 
