@@ -19,35 +19,39 @@
     if(!isset($_COOKIE["teams"])){
         $teams = "";
         $array = array();
-        setcookie("teams", $teams, time() + (86400 * 10), "/");
+        setcookie("teams", $teams, time() + (86400 * 100), "/");
     } else {
         $teams = $_COOKIE["teams"];
         $array = explode(" ", $teams);
     }
 
-    if(isset($_POST["add"])){
-        if(!empty($_POST["name"])){
-            array_push($array, "{$_POST["name"]}");
-            $teams = implode(" ", $array);
-            setcookie("teams", $teams, time() + (86400 * 10), "/");
-        } else {
-            echo"Enter a name <br>";
-        }
-    }
-
-    if(isset($_COOKIE["teams"])){
+    function names(){
         foreach(explode(" ", $_COOKIE["teams"]) as $name){
             echo "<form action='teamGenerator.php' method='post'>
                     <input type='submit' name='user' value='$name'></from><br>";
         }
-    } else {
-        echo"There is no cookie. <br>";
+    }    
+
+    if(isset($_POST["add"])){
+        if(!empty($_POST["name"])){
+            array_push($array, filter_input(INPUT_POST, "name", FILTER_SANITIZE_SPECIAL_CHARS));
+            $teams = implode(" ", $array);
+            setcookie("teams", $teams, time() + (86400 * 100), "/");
+            echo"{$_POST["name"]} added<br>";
+        } else {
+            echo"Enter a name <br>";
+        }
+        names();
     }
     
+// delete
     if(isset($_POST["user"])){
         $array = explode(" ", $teams);
         $array = array_diff($array, [$_POST["user"]]);
         $teams = implode(" ", $array);
-        setcookie("teams", $teams, time() + (86400 * 10), "/");
+        setcookie("teams", $teams, time() + (86400 * 100), "/");
+        echo"{$_POST["user"]} removed";
+        names();
     }
+        
 ?>
