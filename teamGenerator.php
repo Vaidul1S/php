@@ -12,6 +12,7 @@
         <input type="text" name="name">
         <input type="submit" name="add" value="Add">
     </form>
+    <hr>
 </body>
 </html>
 <?php
