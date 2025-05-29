@@ -15,17 +15,31 @@
 </body>
 </html>
 <?php
-    $teams = array();
+    if(isset($_COOKIE["team"])){
+        $teams = "";
+        $array = array();
+        setcookie("teams", "", time() + (86400 * 10), "/");
+    } else {
+        $teams = 
+    }
+    
 
     if(isset($_POST["add"])){
         if(!empty($_POST["name"])){
-            array_push($teams, "{$_POST["name"]}");
+            array_push($array, "{$_POST["name"]}");
+            $teams = implode("", $array);
+            setcookie("teams", $teams, time() + (86400 * 10), "/");
         } else {
-            echo"Enter a name";
+            echo"Enter a name <br>";
         }
     }
+
     
-    foreach($teams as $name){
-        echo"{$name}<br>";
+
+    if(isset($_COOKIE["teams"])){
+        echo"Name {$_COOKIE["teams"]} <br>";
+    } else {
+        echo"There is no cookie. <br>";
     }
+    
 ?>
