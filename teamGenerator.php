@@ -37,7 +37,8 @@
 
     if(isset($_COOKIE["teams"])){
         foreach(explode(" ", $_COOKIE["teams"]) as $name){
-            echo "<input type='submit' name='user' value='$name'><br>";
+            echo "<form action='teamGenerator.php' method='post'>
+                    <input type='submit' name='user' value='$name'></from><br>";
         }
     } else {
         echo"There is no cookie. <br>";
@@ -46,7 +47,6 @@
     if(isset($_POST["user"])){
         $array = explode(" ", $teams);
         $array = array_diff($array, [$_POST["user"]]);
-        echo $_POST["user"];
         $teams = implode(" ", $array);
         setcookie("teams", $teams, time() + (86400 * 10), "/");
     }
