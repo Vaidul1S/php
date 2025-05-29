@@ -24,7 +24,6 @@
         $teams = $_COOKIE["teams"];
         $array = explode(" ", $teams);
     }
-    
 
     if(isset($_POST["add"])){
         if(!empty($_POST["name"])){
@@ -35,14 +34,20 @@
             echo"Enter a name <br>";
         }
     }
-    
 
     if(isset($_COOKIE["teams"])){
         foreach(explode(" ", $_COOKIE["teams"]) as $name){
-            echo $name . "<br>";
+            echo "<input type='submit' name='user' value='$name'><br>";
         }
     } else {
         echo"There is no cookie. <br>";
     }
     
+    if(isset($_POST["user"])){
+        $array = explode(" ", $teams);
+        $array = array_diff($array, [$_POST["user"]]);
+        echo $_POST["user"];
+        $teams = implode(" ", $array);
+        setcookie("teams", $teams, time() + (86400 * 10), "/");
+    }
 ?>
