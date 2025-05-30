@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="index.php" method="post">
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
         Username:
         <input type="text" name="username"><br>
         Age:
