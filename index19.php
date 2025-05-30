@@ -18,9 +18,14 @@
 <?php
     // $_SERVER
 
-    foreach($_SERVER as $key => $value){
-        echo"{$key} --- {$value} <br>";
-    }
+    // foreach($_SERVER as $key => $value){                //all $_SERVER keys
+    //     echo"{$key} --- {$value} <br>";
+    // }
+
+    echo $_SERVER["DOCUMENT_ROOT"] . "<br>";
+    echo $_SERVER["PHP_SELF"] . "<br>";
+    echo $_SERVER["SERVER_NAME"] . "<br>";
+    echo $_SERVER["REQUEST_METHOD"] . "<br>";
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo"------------------------------Yellow------------------------------";
