@@ -25,6 +25,8 @@
 </html>
 
 <?php
+    // REQUEST METHODS
+
     // $_GET $_POST     -  get per quary (url), post - saugesnis, uzklausos dydis neribotas
     // $_REQUEST - ima is kur tik gali get, post, cookie
     // echo $_POST["username"] . "<br>";
