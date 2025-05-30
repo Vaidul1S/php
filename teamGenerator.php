@@ -34,10 +34,12 @@
 
     if(isset($_POST["add"])){
         if(!empty($_POST["name"])){
-            array_push($array, filter_input(INPUT_POST, "name", FILTER_SANITIZE_SPECIAL_CHARS));
+
+            $new = filter_input(INPUT_POST, "name", FILTER_SANITIZE_SPECIAL_CHARS);
+            array_push($array, $new);
             $teams = implode(" ", $array);
             setcookie("teams", $teams, time() + (86400 * 100), "/");
-            echo"{$_POST["name"]} added<br>";
+            echo"{$new} added<br>";
         } else {
             echo"Enter a name <br>";
         }
@@ -55,3 +57,17 @@
     }
         
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <hr>
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
+        <input type="submit" value="Generate Teams">
+    </form>
+</body>
+</html>
