@@ -8,7 +8,7 @@
 </head>
 
 <body>    
-    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">        
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">        
         <label>Age:</label>
         <input type="text" name="age">        
         <input type="submit" value="try">
@@ -29,6 +29,14 @@
     } else {
         echo "You must be 18+ <br>";  
     }
+
+    $result = match($age){
+        18 => "Pilnaprotis<br>",
+        65 => "Pensininkas<br>",
+        default => "No match<br>",
+    };
+
+    echo $result;  
 
     $hours = 50;
     $rate = 15;

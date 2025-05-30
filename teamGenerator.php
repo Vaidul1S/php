@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2>Welcome to Team Generator</h2>
-    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
         Add name:
         <input type="text" name="name">
         <input type="submit" name="add" value="Add">
