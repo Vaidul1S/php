@@ -6,7 +6,7 @@
     <title>Radio buttons</title>
 </head>
 <body>
-    <form action="index.php" method="post">
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
         <input type="radio" name="credit_card" value="Visa">Visa<br>
         <input type="radio" name="credit_card" value="Mastercard">Mastercard<br>
         <input type="radio" name="credit_card" value="Revolut">Revolut<br>        

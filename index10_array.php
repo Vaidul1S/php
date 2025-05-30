@@ -6,7 +6,7 @@
     <title>Array</title>
 </head>
 <body>
-    <form action="index.php" method="post">
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
         <label for="">Enter Country</label>
         <input type="text" name="country">
         <input type="submit" value="Submit">

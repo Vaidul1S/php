@@ -8,7 +8,7 @@
 </head>
 
 <body>    
-    <form action="index.php" method="post">        
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">        
         <label>Age:</label>
         <input type="text" name="age">        
         <input type="submit" value="try">

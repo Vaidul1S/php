@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Methods</title>
+    <title>Mathametics</title>
 </head>
 
 <body>    
-    <form action="index.php" method="post">        
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">        
         <label>x:</label>
         <input type="text" name="x">
         <label>y:</label>
@@ -22,7 +22,7 @@
 </html>
 
 <?php
-    // $_GET $_POST     -  get per quary (url), post - saugesnis, uzklausos dydis neribotas
+    // Mathametics
 
     $x = $_POST["x"];
     $y = $_POST["y"];

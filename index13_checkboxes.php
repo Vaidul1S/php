@@ -6,7 +6,7 @@
     <title>Radio buttons</title>
 </head>
 <body>
-    <form action="index.php" method="post">
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
         <input type="checkbox" name="foods[]" value="pizza">Pizza<br>
         <input type="checkbox" name="foods[]" value="apple">Apple<br>
         <input type="checkbox" name="foods[]" value="cookie">Cookie<br>        
