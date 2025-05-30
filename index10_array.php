@@ -23,6 +23,7 @@
     $food_5 = "blueberry";
     
     $foods = array("pizza", "apple", "cookie", "orange", "blueberry");
+    // $foods = ["pizza", "apple", "cookie", "orange", "blueberry"];        //same array
     
     echo $foods[0] . "<br>";
     echo $foods[4] . "<br>";
@@ -73,8 +74,9 @@
     //array in array
     $groceries = ["pizza", 
                 array("apple", "orange", "blueberry"),
-                "cookie",
+                "cookies" => ["oreo", "biscuit", "muffin"],
                 "cake"];
 
-    echo "Selected grocery: " . $groceries[1][2];
+    echo "Selected grocery: " . $groceries[1][1] . "<br>";
+    echo "Selected grocery: " . $groceries["cookies"][2] . "<br>";
 ?>
