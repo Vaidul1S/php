@@ -39,3 +39,21 @@ button {
     padding: 5px 10px;
     cursor: pointer;
 }
+
+.teammate, .buttonT {
+    cursor: pointer;
+}
+
+.teammate {
+    display: inline-block;
+    margin: 5px;
+    &:hover {
+        background-color: aqua;
+    }
+}
+
+.buttonT {
+    &:hover {
+        background-color: limegreen;
+    }
+}

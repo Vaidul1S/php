@@ -52,6 +52,8 @@
     $values = array_values($capitals);
     // $capitals = array_flip($capitals);          //sukeicia key su values vietom
     
+    print_r($capitals);
+
     foreach($capitals as $key => $value){
         echo"{$key} = {$value} <br>";
     }
@@ -67,4 +69,12 @@
     $capital = $capitals[$_POST["country"]];
 
     echo $capital . "<br>";
+
+    //array in array
+    $groceries = ["pizza", 
+                array("apple", "orange", "blueberry"),
+                "cookie",
+                "cake"];
+
+    echo "Selected grocery: " . $groceries[1][2];
 ?>

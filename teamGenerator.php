@@ -11,7 +11,7 @@
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
         Add name:
         <input type="text" name="name">
-        <input type="submit" name="add" value="Add">
+        <input class="buttonT" type="submit" name="add" value="Add">
     </form>
     <hr>
 </body>
@@ -29,7 +29,7 @@
     function names(){
         foreach(explode(" ", $_COOKIE["teams"]) as $name){
             echo "<form action='teamGenerator.php' method='post'>
-                    <input type='submit' name='user' value='$name'></from><br>";
+                    <input class='teammate' type='submit' name='user' value='$name'></from>";
         }
     }    
 
@@ -70,7 +70,7 @@
 <body> 
     <hr>
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
-        <input type="submit" value="Generate Teams">
+        <input class="buttonT" type="submit" value="Generate Teams">
     </form>
 </body>
 </html>
