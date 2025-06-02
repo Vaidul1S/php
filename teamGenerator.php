@@ -70,7 +70,26 @@
 <body> 
     <hr>
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
-        <input class="buttonT" type="submit" value="Generate Teams">
+        <input class="buttonT" type="submit" name="generate" value="Generate Teams">
     </form>
 </body>
 </html>
+<?php
+    function generate(){
+        if(isset($_POST["generate"])){
+            $teams = $_COOKIE["teams"];
+            $array = explode(" ", $teams);
+            // echo rand(0, count($array)) . "<br>";
+            shuffle($array);
+            foreach($array as $key => $name){
+                if($key % 2){
+                    echo $name . "<br>";
+                }else{
+                    echo "<br>" . $name . "<br>";
+                }                
+            }
+        }
+    }
+
+    generate();
+?>
