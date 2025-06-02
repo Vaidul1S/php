@@ -65,6 +65,6 @@
 
     echo time() . "<br>";                                        //sekundes nuo 1970 01 01
 
-    $date = "1970-01-01 01:00:01";                               // tipo mano laiko zona gmt+1
+    $date = "1970-01-01 01:00:05";                               // tipo mano laiko zona gmt+1
     echo strtotime($date) . "<br>";
 ?>

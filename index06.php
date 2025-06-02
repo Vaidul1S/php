@@ -25,12 +25,14 @@
     if ($age >= 18) {
         echo "You may enter <br>";  
     } else if ($age == 0) {
-        echo "You were just born";
+        echo "You were just born <br>";
     } else {
         echo "You must be 18+ <br>";  
     }
 
-    $result = match($age){
+    $age2 = 18;
+
+    $result = match($age2){                     // neveikia su $_POST
         18 => "Pilnaprotis<br>",
         65 => "Pensininkas<br>",
         default => "No match<br>",
