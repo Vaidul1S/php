@@ -29,36 +29,38 @@
     $z = $_POST["z"];
     $total = null;
 
-    $total = abs($x);
+    $total = abs($x);                                           //absolute - modulis
 
     echo "x lygu: {$x} y lygu: {$y} z lygu: {$z} <br>";
     echo "x modulis: " . $total . "<br>";
    
-    $total = round($x);
+    $total = round($x);                                         //apvalinimas
     echo "x round: " . $total . "<br>";
     
-    $total = floor($x);                     //round down
+    $total = floor($x);                                         //round down
     echo "x round down: " . $total . "<br>";
 
-    $total = ceil($x);                     //round up
+    $total = ceil($x);                                          //round up
     echo "x round up: " . $total . "<br>";
 
-    $total = sqrt($x);
-    echo "square root of x: " . $total . "<br>";       //saknis is x
+    $total = sqrt($x);                                          //saknis is x
+    echo "square root of x: " . $total . "<br>";                
 
-    $total = pow($x, $y);
-    echo "power: " . $total . "<br>";       //x^y
+    $total = pow($x, $y);                                       //x^y
+    echo "power: " . $total . "<br>";                           
 
-    $total = max($x, $y, $z);
+    $total = max($x, $y, $z);                                   //isrenkam didziausia
     echo "highhest number: " . $total . "<br>";     
     
-    $total = min($x, $y, $z);
+    $total = min($x, $y, $z);                                   //isrenkam maziausia
     echo "lowest number: " . $total . "<br>";     
    
-    $total = pi();
+    $total = pi();                                              //skaicius pi 3.14
     echo "pi: " . $total . "<br>";   
 
     $total = rand(1, 99);
     echo "rand number: " . $total . "<br>";
+
+    echo date("Y-m-d H:i:s");
 
 ?>
