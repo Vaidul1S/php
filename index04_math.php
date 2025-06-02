@@ -61,6 +61,10 @@
     $total = rand(1, 99);
     echo "rand number: " . $total . "<br>";
 
-    echo date("Y-m-d H:i:s");
+    echo date("Y-m-d H:i:s") . "<br>";
 
+    echo time() . "<br>";                                        //sekundes nuo 1970 01 01
+
+    $date = "1970-01-01 01:00:01";                               // tipo mano laiko zona gmt+1
+    echo strtotime($date) . "<br>";
 ?>
