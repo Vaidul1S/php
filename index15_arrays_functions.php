@@ -13,8 +13,7 @@
     $username = strtoupper($username);              // didziosios
     $username = str_pad($username, 20, "-");
     $equals = strcmp($username, "Grace");           //string compare returns true(0) false (-1)
-    $count = strlen($username);
-                        //ilgis
+    $count = strlen($username);                     //ilgis
 
     $phone = str_replace("-", "", $phone);
 
