@@ -45,7 +45,9 @@
             echo"Enter a name <br>";
         }
         names();
+        echo "<hr>";
     }
+    
     
 // delete
     if(isset($_POST["user"])){
@@ -55,20 +57,14 @@
         setcookie("teams", $teams, time() + (86400 * 100), "/");
         echo"{$_POST["user"]} removed";
         names();
+        echo "<hr>";
     }
 
     
         
 ?>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body> 
-    <hr>
+<body>     
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
         <input class="buttonT" type="submit" name="generate" value="Generate Teams">
     </form>
@@ -79,19 +75,20 @@
         if(isset($_POST["generate"])){
             $teams = $_COOKIE["teams"];
             $array = explode(" ", $teams);
-            // echo rand(0, count($array)) . "<br>";
             shuffle($array);
             $i=0;
+            $size=2;
             foreach($array as $key => $name){
-                if($key % 2){
-                    echo $name . "<br><br>";
+                if($key % $size){
+                    echo "{$name}<br>";
                 }else{
                     $i++;
-                    echo "Team {$i}" . "<br>" . $name . "<br>";
+                    echo "<br><div class='team'>Team {$i}</div>" . $name . "<br>";
                 }                
             }
         }
     }
 
     generate();
+    
 ?>
