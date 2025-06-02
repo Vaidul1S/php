@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathametics</title>
+    <title>Mathematics</title>
 </head>
 
 <body>    
@@ -22,7 +22,7 @@
 </html>
 
 <?php
-    // Mathametics
+    // Mathematics
 
     $x = $_POST["x"];
     $y = $_POST["y"];
