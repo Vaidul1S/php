@@ -81,11 +81,13 @@
             $array = explode(" ", $teams);
             // echo rand(0, count($array)) . "<br>";
             shuffle($array);
+            $i=0;
             foreach($array as $key => $name){
                 if($key % 2){
-                    echo $name . "<br>";
+                    echo $name . "<br><br>";
                 }else{
-                    echo "<br>" . $name . "<br>";
+                    $i++;
+                    echo "Team {$i}" . "<br>" . $name . "<br>";
                 }                
             }
         }
