@@ -1,5 +1,12 @@
 <?php
 
-$dns= "mysql:host=localhost;dbname=cosmos";
+$dsn= "mysql:host=localhost;dbname=cosmos";
 $dbusername = "root";
-$password = "";
+$dbpassword = "";
+
+try {
+    $pdo = new PDO($dsn, $dbusername, $dbpassword);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
