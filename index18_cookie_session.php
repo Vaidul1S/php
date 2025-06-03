@@ -8,7 +8,7 @@
 
     
     foreach($_COOKIE as $key => $value){
-        echo"{$key} = {$value} <br>";
+        echo"Cookie key: {$key}, value: {$value} <br>";
     }
 
     if(isset($_COOKIE["food"])){
@@ -26,6 +26,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Session</title>
 </head>
 <body>
