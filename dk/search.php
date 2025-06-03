@@ -40,9 +40,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo"<div><p>No results!</p></div>";
     }else{
         foreach($results as $row){
-            echo htmlspecialchars($row["user"]);
-            echo htmlspecialchars($row["text"]);
-            echo htmlspecialchars($row["reg_date"]);
+            echo "<h4>" . htmlspecialchars($row["user"]) . "</h4>";
+            echo "<p>" . htmlspecialchars($row["text"]) . "</p>";
+            echo "<p>" . htmlspecialchars($row["reg_date"]) . "</p>";
         }        
     }
     ?>
