@@ -15,5 +15,23 @@
         <input type="password" name="password"><br>        
         <button>Sign Up</button>
     </form>
+
+    <form action="update.inc.php" method="post">
+        <h3>Update account</h3>
+        Username:
+        <input type="text" name="username"><br>
+        Password:
+        <input type="password" name="password"><br>        
+        <button>Update</button>
+    </form>
+
+    <form action="delete.inc.php" method="post">
+        <h3>Delete account</h3>
+        Username:
+        <input type="text" name="username"><br>
+        Password:
+        <input type="password" name="password"><br>        
+        <button>Delete</button>
+    </form>
 </body>
 </html>
