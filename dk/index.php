@@ -33,5 +33,12 @@
         <input type="password" name="password"><br>        
         <button>Delete</button>
     </form>
+
+     <form action="search.php" method="post">
+        <h3>Search</h3>
+        Username:
+        <input type="text" name="usersearch"><br>            
+        <button>Search</button>
+    </form>
 </body>
 </html>
