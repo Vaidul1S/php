@@ -42,9 +42,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         foreach($results as $row){
             echo "<h4>" . htmlspecialchars($row["user"]) . "</h4>";
             echo "<p>" . htmlspecialchars($row["text"]) . "</p>";
-            echo "<p>" . htmlspecialchars($row["reg_date"]) . "</p>";
-        }        
+            echo "<p>" . htmlspecialchars($row["reg_date"]) . "</p>";            
+        }      
     }
     ?>
+    <form action="index.php" method="post">                  
+        <button>Go Home</button>
+    </form>
 </body>
 </html>
