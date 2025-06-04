@@ -8,18 +8,18 @@
 
     
     foreach($_COOKIE as $key => $value){
-        echo"Cookie key: {$key}, value: {$value} <br>";
+        echo"<p>Cookie key: {$key}, value: {$value} </p>";
     }
 
     if(isset($_COOKIE["food"])){
-        echo"Buy some {$_COOKIE["food"]} !";
+        echo"<p>Buy some {$_COOKIE["food"]}!</p>";
     } else {
-        echo"There is no cookie.";
+        echo"<p>There is no cookie.</p>";
     }
 
     // session
 
-    session_start();
+    require_once 'dk/config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,8 +30,8 @@
     <title>Session</title>
 </head>
 <body>
-    This is a login page<br>
-    <a href="/website/components17/home.php">Home</a>
+    <h2>This is a login page</h2>
+    <p><a href="/website/components17/home.php">Home</a></p>
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
         Username: <br>
         <input type="text" name="username"><br>

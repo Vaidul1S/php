@@ -6,11 +6,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
     <title>Home</title>
 </head>
 <body>
-    Welcome home <br>
-    <a href="/website/index18.php">Index</a><br>
+    <h2>Welcome home</h2>
+    <p><a href="/website/index18_cookies_session.php">Go back to Login</a></p>
     <form action="home.php" method="post">
         <input type="submit" value="Logout" name="logout">
     </form>
@@ -22,6 +23,6 @@
 
     if(isset($_POST["logout"])){
         session_destroy();
-        header("Location: ../index18.php");
+        header("Location: ../index18_cookies_session.php");
     }
 ?>
