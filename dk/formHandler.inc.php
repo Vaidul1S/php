@@ -10,9 +10,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 VALUES (:user, :pwd);";
 
         $stmt = $pdo->prepare($query);
+        $options = [                                // hashinimo sudetingumas reikalauja resursu
+            'cost' => 12
+        ];
+
+        $hashedPwd = password_hash($pwd, PASSWORD_BCRYPT, $options);
 
         $stmt->bindParam(":user", $username);
-        $stmt->bindParam(":pwd", $pwd);
+        $stmt->bindParam(":pwd", $hashedPwd);
 
         // $stmt->execute([$username, $pwd]);               // naudojam kai VALUES(?, ?)
         $stmt->execute();
