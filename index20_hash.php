@@ -41,4 +41,21 @@
     }else {
         echo "<p>The data aren't the same!</p>";
     }
+
+
+    $pwd = "123";
+
+    $options = [                                // hashinimo sudetingumas reikalauja resursu
+        'cost' => 12
+    ];
+
+    $hashedPwd = password_hash($pwd, PASSWORD_BCRYPT, $options);
+
+    $pwdLogin = "123";
+
+    if (password_verify($pwdLogin, $hashedPwd)){
+        echo "<p>The password is the same!</p>";
+    } else {
+        echo "<p>The password ain't the same!</p>";
+    }
 ?>
