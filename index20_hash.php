@@ -5,11 +5,23 @@
 
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
-    echo "{$hash}<br>";
+    echo "<p>{$hash}</p>";
    
     if(password_verify("123", $hash)){
-        echo"You are logged in <br>";
+        echo"<p>You are logged in </p>";
     } else {
-        echo"Incorect password <br>";
+        echo"<p>Incorect password </p>";
     }
+
+    $sensitiveData = "Meovv";
+
+    $salt = bin2hex(random_bytes(16));
+    $pepper = "ASecretPepperSring";
+
+    echo "<p>Salt: {$salt}</p>";
+
+    $dataToHash = $sensitiveData . $salt . $pepper;
+    $hash2 = hash("sha256", $dataToHash);
+
+    echo "<p>Hash2: {$hash2}</p>"
 ?>
