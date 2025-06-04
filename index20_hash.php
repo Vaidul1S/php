@@ -23,5 +23,19 @@
     $dataToHash = $sensitiveData . $salt . $pepper;
     $hash2 = hash("sha256", $dataToHash);
 
-    echo "<p>Hash2: {$hash2}</p>"
+    echo "<p>Hash2: {$hash2}</p>";
+
+    $storedSalt = $salt;
+    $storesHash2 = $hash2;
+    $pepper = "ASecretPepperSring";
+
+    $dataToHash = $sensitiveData . $salt . $pepper;
+
+    $verificationHash = hash("sha256", $dataToHash);
+
+    if($storesHash2 ===$verificationHash){
+        echo "<p>The data are the same!</p>";
+    }else {
+        echo "<p>The data aren't the same!</p>";
+    }
 ?>
