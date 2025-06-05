@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 VALUES (:user, :pwd);";
 
         $stmt = $pdo->prepare($query);
-        $options = [                                // hashinimo sudetingumas reikalauja resursu
+        $options = [                                
             'cost' => 12
         ];
 
