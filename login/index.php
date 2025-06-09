@@ -21,8 +21,7 @@
 
     <h2>Signup</h2>
     <form action="./includes/signup.inc.php" method="post">
-        <input type="text" name="username" placeholder="Username"><br>
-        <input type="password" name="password" placeholder="Password"><br>        
+        <?php signup_inputs() ?> 
         <button>Signup</button>
     </form>
     
