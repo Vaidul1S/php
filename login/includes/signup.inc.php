@@ -11,9 +11,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once 'singup_model.inc.php';
         require_once 'singup_control.inc.php';
 
-        if(empty($username)) {
+        if(is_input_empty($username, $password)) {
 
         }
+        if(is_username_taken($pdo, $username)) {
+            
+        }
+        
 
     } catch (PDOException $e) {
         die("Querry failed: " . $e->getMessage());
