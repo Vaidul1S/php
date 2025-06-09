@@ -62,3 +62,11 @@ button {
     font-size: 18px;
     color: darkred;
 }
+
+.form_error {
+    color: red;
+}
+
+.form_success {
+    color: green;
+}

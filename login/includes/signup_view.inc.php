@@ -13,5 +13,7 @@ function check_signup_errors() {
         }
 
         unset($_SESSION["errors_signup"]);
+    } elseif(isset($_GET["signup"]) && $_GET["signup"] === "success") {
+        echo "<p class='form_success'>Signup success!</p>";
     }
 }
