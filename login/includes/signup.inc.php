@@ -8,7 +8,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         require_once 'db.inc.php';
-        
+        require_once 'singup_model.inc.php';
+        require_once 'singup_control.inc.php';
+
+        if(empty($username)) {
+
+        }
+
     } catch (PDOException $e) {
         die("Querry failed: " . $e->getMessage());
     }
