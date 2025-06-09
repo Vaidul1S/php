@@ -24,4 +24,4 @@ if(!isset($_SESSION["last_regeneration"])){
     if(time() - $_SESSION["last_regeneration"] >= $interval){
         regenerate();
     }
-}
+} 

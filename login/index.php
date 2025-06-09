@@ -21,13 +21,11 @@
 
     <h2>Signup</h2>
     <form action="./includes/signup.inc.php" method="post">
-        <?php signup_inputs() ?> 
+        <?php signup_inputs(); ?> 
         <button>Signup</button>
     </form>
     
-    <?php 
-    check_signup_errors();
-    ?>
+    <?php check_signup_errors(); ?>
 
 </body>
 </html>

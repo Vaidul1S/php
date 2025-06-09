@@ -7,7 +7,8 @@ function signup_inputs(){
     if(isset($_SESSION["signup_data"]["username"]) && 
     !isset($_SESSION["errors_signup"]["username_taken"])){
         echo '<input type="text" name="username" placeholder="Username" 
-        value="'.$_SESSION["signup_data"]["username"].'"><br>';             // butu email rasytume sita sumustini emailui
+        value="'.$_SESSION["signup_data"]["username"].'"><br>';             
+        // butu email rasytume sita sumustini emailui
     } else {
         echo'<input type="text" name="username" placeholder="Username"><br>';
     }

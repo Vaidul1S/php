@@ -1,6 +1,6 @@
 <?php
 
-$host= "localhost";
+$host = "localhost";
 $dbname = "cosmos";
 $dbusername = "root";
 $dbpassword = "";

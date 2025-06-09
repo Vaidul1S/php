@@ -20,4 +20,4 @@ function is_username_taken(object $pdo, string $username){
 
 function create_user(object $pdo, string $username, string $password){
     set_user($pdo, $username, $password);
-}
+} 
