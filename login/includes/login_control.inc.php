@@ -19,7 +19,7 @@ function user_doesnt_exists(bool|array $result){
 }
 
 function is_pwd_wrong(string $password, string $hashedPwd){
-    if(!password_hash($password, $hashedPwd)){
+    if(!password_verify($password, $hashedPwd)){
         return true;
     } else {
         return false;
