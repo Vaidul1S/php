@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $result = get_user($pdo, $username);
 
         if(user_doesnt_exists($result)){
-            $errors["login_incorrect"]= "User not found!";
+            $errors["login_incorrect"]= "Check username or password!";
         }
         if(!user_doesnt_exists($result) && is_pwd_wrong($password, $result["password"])){
             $errors["login_incorrect"]= "Check username or password!";
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         session_id($sessionId);
 
         $_SESSION["user_id"] = $result["id"];
-        $_SESSION["user_username"] = htmlspecialchars($result["username"]);
+        $_SESSION["user_username"] = htmlspecialchars($result["user"]);
 
         $_SESSION['last_regeneration'] = time();
 
