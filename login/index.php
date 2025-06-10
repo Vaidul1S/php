@@ -29,5 +29,10 @@
     
     <?php check_signup_errors(); ?>
 
+    <h2>Logout</h2>
+    <form action="./includes/logout.inc.php" method="post">                
+        <button>Logout</button>
+    </form>
+
 </body>
 </html>

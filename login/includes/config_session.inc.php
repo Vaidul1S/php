@@ -28,7 +28,7 @@ function regenerate_session_id_loggedin(){
     $_SESSION['last_regeneration'] = time();
 }
 
-if(isset($_SESSION["user_id"])){
+if(!isset($_SESSION["user_id"])){
     if(!isset($_SESSION["last_regeneration"])){
         regenerate_session_id_loggedin();
     } else {
