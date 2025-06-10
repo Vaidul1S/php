@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Error handlers
         $errors = [];
         if(is_input_empty($username, $password)) {
-            $errors["empty_input"]= "Fill in all field!";
+            $errors["empty_input"]= "Fill in all fields!";
         }
         if(is_username_taken($pdo, $username)) {
             $errors["username_taken"]= "Username already taken!";            
