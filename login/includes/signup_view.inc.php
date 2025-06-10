@@ -21,7 +21,7 @@ function check_signup_errors() {
 
         echo "<br>";
 
-        foreach($errors as$error) {
+        foreach($errors as $error) {
             echo "<p class='form_error'>" .$error . "</p>";
         }
 
