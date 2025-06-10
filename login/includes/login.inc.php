@@ -13,9 +13,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $errors = [];
         if(is_input_empty($username, $password)) {
             $errors["empty_input"]= "Fill in all fields!";
-        }
-        if(is_username_taken($pdo, $username)) {
-            $errors["username_taken"]= "Username already taken!";            
+        }        
+
+        $result = get_user($pdo, $username);
+
+        if(user_doesnt_exists($result)){
+            $errors["login_incorrect"]= "User not found!";
         }
 
         require_once 'config_session.inc.php';
