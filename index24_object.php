@@ -9,15 +9,11 @@
     
 <?php
 
-$brand = "Mercedes Benz";
-$color = "Silver";
-$year = "1956";
+require_once "Classes/Car.php";
 
-function getCarInfo($brand, $color, $year){
-    return "Brand: " . $brand . ", Color: " . $color . ", Year:" . $year;
-}
+$car01 = new Car("Toyota");
 
-echo getCarInfo($brand, $color, $year);
+echo $car01->getBrand();
 
 ?>
 
