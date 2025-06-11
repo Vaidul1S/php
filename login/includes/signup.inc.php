@@ -45,23 +45,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: ../index.php");
     die();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-http://localhost/website/login/index.php
