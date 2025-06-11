@@ -18,6 +18,31 @@ class Car {
     public function getBrand(){
         return $this->brand;
     } 
+    public function setBrand($brand){
+        $this->brand = $brand;
+    } 
+
+    public function getColor(){
+        return $this->color;
+    } 
+    public function setColor($color){
+        $allowedColors = [
+            "red",
+            "blue",
+            "green",
+            "yellow"
+        ];
+        if (in_array($color, $allowedColors)){
+            $this->color = $color;
+        }        
+    } 
+
+    public function getYear(){
+        return $this->year;
+    } 
+    public function setYear($year){
+        $this->year = $year;
+    } 
 
     // Method
     function getCarInfo(){

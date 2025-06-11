@@ -13,7 +13,12 @@ require_once "Classes/Car.php";
 
 $car01 = new Car("Toyota");
 
-echo $car01->getBrand();
+echo "<p>{$car01->getBrand()}</p>";
+$car01->setBrand("Subaru");
+echo "<p>{$car01->getBrand()}</p>";
+$car01->setColor('black');
+echo "<p>{$car01->getColor()}</p>";
+echo "<p>{$car01->getYear()}</p>";
 
 ?>
 
