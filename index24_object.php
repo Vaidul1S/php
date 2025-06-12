@@ -22,5 +22,14 @@ echo "<p>{$car01->getYear()}</p>";
 
 ?>
 
+<form action="Classes/includes/signup.inc.php" method="post">
+        Username: <br>
+        <input type="text" name="username"><br>
+        Password: <br>
+        <input type="password" name="password"><br>
+        <button>Signup</button>
+</form>
+
+
 </body>
 </html>
