@@ -1,6 +1,6 @@
 <?php
     //include() function
-    include("php/modules/header.html");
+    include("modules/header.html");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,5 +15,5 @@
 </body>
 </html>
 <?php
-        include("php/modules/footer.html");
+        include("modules/footer.html");
 ?>

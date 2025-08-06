@@ -11,7 +11,7 @@
 </head>
 <body>
     <h2>Welcome home</h2>
-    <p><a href="/website/index18_cookies_session.php">Go back to Login</a></p>
+    <p><a href="/php/index18_cookies_session.php">Go back to Login</a></p>
     <form action="home.php" method="post">
         <input type="submit" value="Logout" name="logout">
     </form>
