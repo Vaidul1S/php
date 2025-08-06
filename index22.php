@@ -1,6 +1,6 @@
 <?php
     // database
-    include("components17/database.php");
+    include("php/php/modules/database.php");
     
     
     $sql = "SELECT * FROM planets";

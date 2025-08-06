@@ -31,7 +31,7 @@
 </head>
 <body>
     <h2>This is a login page</h2>
-    <p><a href="/website/components17/home.php">Home</a></p>
+    <p><a href="/php/modules/home.php">Home</a></p>
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
         Username: <br>
         <input type="text" name="username"><br>
@@ -48,7 +48,7 @@
             $_SESSION["username"] = $_POST["username"];
             $_SESSION["password"] = $_POST["password"];
            
-            header("Location: components17/home.php");
+            header("Location: modules/home.php");
         } else {
             echo "Missing username/password <br>";
         }
