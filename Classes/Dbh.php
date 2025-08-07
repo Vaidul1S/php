@@ -2,7 +2,7 @@
 
 class Dbh {
     private $host = "localhost";
-    private $dbname = "cosmos";
+    private $dbname = "users";
     private $dbusername = "root";
     private $dbpassword = "";
 
