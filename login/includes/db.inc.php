@@ -1,7 +1,7 @@
 <?php
 
 $host = "localhost";
-$dbname = "cosmos";
+$dbname = "users";
 $dbusername = "root";
 $dbpassword = "";
 
