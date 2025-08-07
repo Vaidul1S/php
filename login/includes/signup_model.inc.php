@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 function get_username(object $pdo, string $username){
-    $query = "SELECT user FROM planets WHERE user = :username;";
+    $query = "SELECT username FROM users WHERE username = :username;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":username", $username);
     $stmt->execute();
@@ -13,7 +13,7 @@ function get_username(object $pdo, string $username){
 }
 
 function set_user(object $pdo, string $username, string $password) {
-    $query = "INSERT INTO planets (user, password) VALUE (:username, :pwd)";
+    $query = "INSERT INTO users (username, password) VALUE (:username, :pwd)";
     $stmt = $pdo->prepare($query);
     $options = [
         'cost' => 12
