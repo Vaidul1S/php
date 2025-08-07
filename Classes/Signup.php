@@ -10,7 +10,7 @@ class Signup extends Dbh {                      // extends - Signup tampa Dbh va
     }
 
     private function insertUser() {
-        $query = "INSERT INTO planets (user, password) VALUES (:username, :password);";
+        $query = "INSERT INTO users (username, password) VALUES (:username, :password);";
         $stmt = $this->connect()->prepare($query);
         $stmt->bindParam(":username", $this->username);
         $stmt->bindParam(":password", $this->password);
