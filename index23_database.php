@@ -32,7 +32,7 @@
             echo"Please enter a password";
         } else {
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO planets (user, password) VALUES ('$username', '$hash');";
+            $sql = "INSERT INTO users (username, password) VALUES ('$username', '$hash');";
 
             try{
                 mysqli_query($conn, $sql);
