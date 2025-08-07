@@ -1,6 +1,6 @@
 <?php
     // database
-    include("php/php/modules/database.php");
+    include("modules/database.php");
     
     
     $sql = "SELECT * FROM planets";
@@ -11,7 +11,7 @@
         while($row = mysqli_fetch_assoc($result)){
             echo $row["id"] . "<br>";
             echo $row["user"] . "<br>";
-            echo $row["reg_date"] . "<br>";
+            echo $row["role"] . "<br>";
             }    
         } else {
         echo"There is no member in Meovv with this name";

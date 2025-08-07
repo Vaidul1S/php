@@ -1,6 +1,6 @@
 <?php
     // database
-    include("components17/database.php");
+    include("modules/database.php");
 
 ?>
 <!DOCTYPE html>

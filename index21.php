@@ -1,6 +1,6 @@
 <?php
     // database
-    include("php/php/modules/database.php");
+    include("modules/database.php");
     
     $username = "Anna";
     $password = "123";
