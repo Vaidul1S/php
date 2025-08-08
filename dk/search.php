@@ -7,6 +7,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         require_once "db.inc.php";
         $query = "SELECT comments.*, users.username 
             FROM comments
+            JOIN users ON comments.user_id = users.id
             WHERE users.username LIKE :search;";
 
         $stmt = $pdo->prepare($query);
