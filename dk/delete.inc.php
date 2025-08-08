@@ -6,7 +6,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     try {
         require_once "db.inc.php";
-        $query = "DELETE FROM planets WHERE user = :user AND password = :pwd;";
+        $query = "DELETE FROM users WHERE username = :user AND password = :pwd;";
 
         $stmt = $pdo->prepare($query);
 

@@ -6,7 +6,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     try {
         require_once "db.inc.php";
-        $query = "UPDATE planets SET user = :user, password = :pwd WHERE id = 29;";
+        $query = "UPDATE users SET username = :user, password = :pwd WHERE id = 11;";
 
         $stmt = $pdo->prepare($query);
 

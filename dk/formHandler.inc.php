@@ -6,7 +6,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     try {
         require_once "db.inc.php";
-        $query = "INSERT INTO planets (user, password) 
+        $query = "INSERT INTO users (username, password) 
                 VALUES (:user, :pwd);";
 
         $stmt = $pdo->prepare($query);

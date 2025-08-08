@@ -1,6 +1,6 @@
 <?php
 
-$dsn= "mysql:host=localhost;dbname=cosmos";
+$dsn= "mysql:host=localhost;dbname=users";
 $dbusername = "root";
 $dbpassword = "";
 

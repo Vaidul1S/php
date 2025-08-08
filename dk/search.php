@@ -5,7 +5,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     try {
         require_once "db.inc.php";
-        $query = "SELECT * FROM comments WHERE user = :usersearch;";
+        $query = "SELECT * FROM comments WHERE user_id = :usersearch;";
 
         $stmt = $pdo->prepare($query);
 
@@ -41,9 +41,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo"<div><p>No results!</p></div>";
     }else{
         foreach($results as $row){
-            echo "<h4>" . htmlspecialchars($row["user"]) . "</h4>";
+            echo "<h4>" . htmlspecialchars($row["user_id"]) . "</h4>";
             echo "<p>" . htmlspecialchars($row["text"]) . "</p>";
-            echo "<p>" . htmlspecialchars($row["reg_date"]) . "</p>";            
+            echo "<p>" . htmlspecialchars($row["date"]) . "</p>";            
         }      
     }
     ?>
