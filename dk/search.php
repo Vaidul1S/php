@@ -5,11 +5,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     try {
         require_once "db.inc.php";
-        $query = "SELECT * FROM comments WHERE user_id = :usersearch;";
+        $query = "SELECT comments.*, users.username 
+            FROM comments
+            WHERE users.username LIKE :search;";
 
         $stmt = $pdo->prepare($query);
 
-        $stmt->bindParam(":usersearch", $usersearch);
+        $stmt->bindValue(":search", "%" . $usersearch . "%", PDO::PARAM_STR);
 
         $stmt->execute();
 
@@ -41,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo"<div><p>No results!</p></div>";
     }else{
         foreach($results as $row){
-            echo "<h4>" . htmlspecialchars($row["user_id"]) . "</h4>";
+            echo "<h4>" . htmlspecialchars($row["username"]) . " (ID: " . htmlspecialchars($row["user_id"]) . ")</h4>";
             echo "<p>" . htmlspecialchars($row["text"]) . "</p>";
             echo "<p>" . htmlspecialchars($row["date"]) . "</p>";            
         }      
